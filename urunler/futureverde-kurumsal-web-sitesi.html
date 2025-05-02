@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="[ÜRÜN ADI] - DanskApplication" />
+    <title>[ÜRÜN ADI] | DanskApplication</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- Ana sitenizden stil dosyasını içe aktarın veya aynı stili buraya kopyalayın -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <style>
+      /* Ürün sayfasına özel stiller */
+      .product-section {
+        padding: var(--spacing-xl) 0;
+        background-color: var(--white);
+      }
+
+      .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-lg);
+        align-items: flex-start;
+      }
+
+      .product-gallery {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .product-main-image {
+        width: 100%;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-md);
+        margin-bottom: var(--spacing-sm);
+        overflow: hidden;
+      }
+
+      .product-main-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+        max-width: 100%;
+        object-fit: contain;
+      }
+
+      .product-main-image:hover img {
+        transform: scale(1.05);
+      }
+
+      .product-thumbnails {
+        display: flex;
+        gap: var(--spacing-xs);
+        margin-top: var(--spacing-sm);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .product-thumbnail {
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: var(--transition);
+      }
+
+      .product-thumbnail.active {
+        border-color: var(--primary-color);
+      }
+
+      .product-thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .product-info {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .product-title {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-xs);
+      }
+
+      .product-category {
+        color: var(--text-light);
+        margin-bottom: var(--spacing-sm);
+        font-size: 1rem;
+      }
+
+      .product-description {
+        margin-bottom: var(--spacing-md);
+      }
+
+      .product-features {
+        margin-bottom: var(--spacing-md);
+        margin-top: var(--spacing-md);
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .feature-item {
+        padding: var(--spacing-xs) 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .feature-icon {
+        color: var(--primary-color);
+        margin-right: var(--spacing-xs);
+      }
+
+      .product-cta {
+        background-color: var(--background-dark);
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius);
+        margin-top: var(--spacing-md);
+      }
+
+      .price-request-form {
+        margin-top: var(--spacing-md);
+      }
+
+      .form-group {
+        margin-bottom: var(--spacing-md);
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: var(--spacing-xs);
+        font-weight: 500;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: var(--border-radius);
+        font-family: "Poppins", sans-serif;
+        transition: var(--transition);
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+      }
+
+      /* Honeypot için gizli alan */
+      .hp-field {
+        display: none;
+      }
+
+      .product-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: var(--spacing-md);
+      }
+
+      .product-tech-item {
+        padding: 4px 10px;
+        background-color: var(--background-dark);
+        border-radius: 20px;
+        font-size: 0.8rem;
+        color: var(--text-light);
+      }
+
+      .product-details {
+        margin-top: var(--spacing-lg);
+      }
+
+      .tabs {
+        display: flex;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .tab-btn {
+        padding: 10px 20px;
+        background: none;
+        border: none;
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .tab-btn.active {
+        color: var(--primary-color);
+        border-bottom-color: var(--primary-color);
+      }
+
+      .tab-content {
+        padding: var(--spacing-md) 0;
+      }
+
+      .tab-pane {
+        display: none;
+      }
+
+      .tab-pane.active {
+        display: block;
+      }
+
+      @media (max-width: 768px) {
+        .product-gallery,
+        .product-info {
+          width: 100%;
+        }
+
+        .product-main-image {
+          max-height: 350px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+        }
+
+        .product-thumbnail {
+          width: 60px;
+          height: 60px;
+          min-width: 60px;
+        }
+
+        .product-thumbnails {
+          justify-content: center;
+        }
+      }
+
+      /* Fix for related products */
+      #related-projects img {
+        max-width: 100%;
+        height: auto !important;
+      }
+
+      @media (max-width: 768px) {
+        .product-container {
+          flex-direction: column;
+        }
+
+        .product-thumbnails {
+          justify-content: center;
+        }
+      }
+
+      #snackbar {
+        visibility: hidden;
+        min-width: 280px;
+        max-width: 90%;
+        background-color: var(--success);
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        padding: 14px 20px;
+        position: fixed;
+        left: 50%;
+        bottom: 40px;
+        transform: translateX(-50%);
+        z-index: 9999;
+        font-weight: 500;
+        font-size: 0.95rem;
+        box-shadow: var(--shadow-md);
+        transition: visibility 0s, opacity 0.3s ease;
+        opacity: 0;
+      }
+
+      #snackbar.show {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      #snackbar.error {
+        background-color: #e53935;
+      }
+    </style>
+  </head>
+  <div id="snackbar"></div>
+  <div id="whatsapp-button-placeholder"></div>
+
+  <body>
+    <!-- Header -->
+    <header class="header scrolled" id="header">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="/index.html">Dansk<span>Application</span></a>
+        </div>
+        <button class="menu-btn" id="menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="/index.html">Ana Sayfa</a></li>
+          <li><a href="/index.html#portfolio" class="active">Projeler</a></li>
+          <li><a href="/index.html#about">Hakkımızda</a></li>
+          <li><a href="/index.html#contact">İletişim</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div
+      class="section"
+      style="
+        padding: 120px 0 20px 0;
+        background: linear-gradient(to bottom right, #0a1a33, #014f86);
+      "
+    >
+      <div class="container">
+        <nav style="font-size: 0.9rem">
+          <a href="/index.html" style="color: var(--white)">Ana Sayfa</a> &gt;
+          <span style="color: var(--white)">[ÜRÜN ADI]</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Product Section -->
+    <section class="product-section">
+      <div class="container">
+        <div class="product-container">
+          <div class="product-gallery">
+            <div class="product-main-image">
+              <img
+                src="/api/placeholder/600/400"
+                alt="[ÜRÜN ADI]"
+                id="main-product-image"
+              />
+            </div>
+            <div class="product-thumbnails">
+              <div
+                class="product-thumbnail active"
+                data-img="/api/placeholder/600/400"
+              >
+                <img
+                  src="/api/placeholder/600/400"
+                  alt="[ÜRÜN ADI] - Görsel 1"
+                />
+              </div>
+              <div
+                class="product-thumbnail"
+                data-img="/api/placeholder/600/400"
+              >
+                <img
+                  src="/api/placeholder/600/400"
+                  alt="[ÜRÜN ADI] - Görsel 2"
+                />
+              </div>
+              <div
+                class="product-thumbnail"
+                data-img="/api/placeholder/600/400"
+              >
+                <img
+                  src="/api/placeholder/600/400"
+                  alt="[ÜRÜN ADI] - Görsel 3"
+                />
+              </div>
+            </div>
+            <div class="product-features">
+              <h3>Özellikler</h3>
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <span class="feature-icon"
+                    ><i class="fas fa-check-circle"></i
+                  ></span>
+                  [ÖZELLİK 1]
+                </li>
+                <li class="feature-item">
+                  <span class="feature-icon"
+                    ><i class="fas fa-check-circle"></i
+                  ></span>
+                  [ÖZELLİK 2]
+                </li>
+                <li class="feature-item">
+                  <span class="feature-icon"
+                    ><i class="fas fa-check-circle"></i
+                  ></span>
+                  [ÖZELLİK 3]
+                </li>
+                <li class="feature-item">
+                  <span class="feature-icon"
+                    ><i class="fas fa-check-circle"></i
+                  ></span>
+                  [ÖZELLİK 4]
+                </li>
+                <li class="feature-item">
+                  <span class="feature-icon"
+                    ><i class="fas fa-check-circle"></i
+                  ></span>
+                  [ÖZELLİK 5]
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="product-info">
+            <h1 class="product-title">[ÜRÜN ADI]</h1>
+            <p class="product-category">[ÜRÜN KATEGORİSİ]</p>
+            <div class="product-description">
+              <p>[ÜRÜN AÇIKLAMASI - BİRİNCİ PARAGRAF]</p>
+              <p>[ÜRÜN AÇIKLAMASI - İKİNCİ PARAGRAF]</p>
+            </div>
+            <p>
+              Bu tasarıma benzeyen veya bu özelliklerdeki bir web sitesini sizin
+              için tasarlayabiliriz.
+            </p>
+
+            <div class="product-tech">
+              <span class="product-tech-item">[TEKNOLOJİ 1]</span>
+              <span class="product-tech-item">[TEKNOLOJİ 2]</span>
+              <span class="product-tech-item">[TEKNOLOJİ 3]</span>
+              <span class="product-tech-item">[TEKNOLOJİ 4]</span>
+            </div>
+
+            <div class="product-cta">
+              <h3>Bu ürün hakkında fiyat bilgisi alın</h3>
+              <p>
+                Ürün hakkında detaylı bilgi ve fiyat teklifi için lütfen
+                aşağıdaki formu doldurun. Ekibimiz en kısa sürede sizinle
+                iletişime geçecektir.
+              </p>
+
+              <form id="priceForm" class="price-request-form">
+                <!-- Formsubmit ayarları -->
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="Yeni Ürün Fiyat Talebi"
+                />
+                <input type="hidden" name="_template" value="box" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://yourdomain.com/tesekkurler.html"
+                />
+                <input type="hidden" name="product" id="productInput" />
+
+                <!-- Ürün adı -->
+                <input
+                  type="hidden"
+                  name="product"
+                  value="FutureVerde Kurumsal Web Sitesi"
+                />
+
+                <!-- Form alanları -->
+                <div class="form-group">
+                  <label for="name" class="form-label">Adınız *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label"
+                    >E-posta Adresiniz *</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" class="form-label"
+                    >Telefon Numaranız</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="form-control"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="company" class="form-label">Şirket Adı</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    class="form-control"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="message" class="form-label">Mesajınız</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="form-control"
+                    rows="4"
+                  ></textarea>
+                </div>
+
+                <!-- Honeypot - botlar için tuzak -->
+                <div class="form-group hp-field">
+                  <label for="website" class="form-label">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    class="form-control"
+                  />
+                </div>
+
+                <button type="submit" class="btn btn-primary form-submit">
+                  Fiyat Bilgisi İste
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="section" style="background-color: var(--background-dark)">
+      <div class="container">
+        <div class="section-title">
+          <h2>Benzer Ürünler</h2>
+          <p>İlginizi çekebilecek diğer ürünlerimiz</p>
+        </div>
+
+        <div
+          id="related-projects"
+          class="portfolio-grid"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+          "
+        ></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <a href="index.html" class="footer-logo"
+              >Dansk<span>Application</span></a
+            >
+            <p class="footer-description">
+              DanskApplication olarak web ve mobil uygulama geliştirme konusunda
+              uzman ekibimizle işinizi dijital dünyada bir adım öne taşıyoruz.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <h4 class="footer-title">Hızlı Bağlantılar</h4>
+            <ul>
+              <li><a href="/index.html">Ana Sayfa</a></li>
+              <li><a href="/index.html#about">Hakkımızda</a></li>
+              <li><a href="/index.html#portfolio">Ürünlerimiz</a></li>
+              <li><a href="/index.html#contact">İletişim</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h4 class="footer-title">İletişim Bilgileri</h4>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <p>Beşiktaş/Kağıthane, İstanbul</p>
+            </div>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <p>+90 (542) 812 30 81</p>
+            </div>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <p>danskapplication@gmail.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <p>
+            &copy; 2025 DanskApplication - Bucak Yazılım. Tüm hakları saklıdır.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Header scroll effect
+      window.addEventListener("scroll", () => {
+        const header = document.getElementById("header");
+        if (window.scrollY > 100) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const navMenu = document.getElementById("nav-menu");
+
+      menuBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+        menuBtn.innerHTML = navMenu.classList.contains("active")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+      });
+
+      // Close menu when clicking on a nav link (mobile)
+      const navLinks = document.querySelectorAll(".nav-menu a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          menuBtn.classList.remove("active");
+          menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+      });
+
+      // Product image gallery
+      const thumbnails = document.querySelectorAll(".product-thumbnail");
+      const mainImage = document.getElementById("main-product-image");
+
+      thumbnails.forEach((thumbnail) => {
+        thumbnail.addEventListener("click", () => {
+          // Remove active class from all thumbnails
+          thumbnails.forEach((t) => t.classList.remove("active"));
+
+          // Add active class to clicked thumbnail
+          thumbnail.classList.add("active");
+
+          // Update main image
+          const imgSrc = thumbnail.getAttribute("data-img");
+          mainImage.src = imgSrc;
+        });
+      });
+
+      // Tabs functionality
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const tabPanes = document.querySelectorAll(".tab-pane");
+
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active class from all buttons and panes
+          tabBtns.forEach((b) => b.classList.remove("active"));
+          tabPanes.forEach((p) => p.classList.remove("active"));
+
+          // Add active class to clicked button
+          btn.classList.add("active");
+
+          // Show corresponding tab pane
+          const tabId = btn.getAttribute("data-tab");
+          document.getElementById(tabId).classList.add("active");
+        });
+      });
+
+      // Form handling
+      const priceRequestForm = document.getElementById("priceRequestForm");
+      const formSuccess = document.getElementById("formSuccess");
+
+      priceRequestForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Form submission logic would go here
+        // For now, we'll just show the success message
+        formSuccess.style.display = "block";
+        priceRequestForm.reset();
+
+        setTimeout(() => {
+          formSuccess.style.display = "none";
+        }, 5000);
+      });
+    </script>
+    <script>
+      // Load project data
+      fetch("../projects.json")
+        .then((res) => res.json())
+        .then((projects) => {
+          const project = projects.find(
+            (p) => p.title === "FutureVerde Kurumsal Web Sitesi"
+          );
+          if (!project) return;
+
+          // Update meta + title
+          document.title = `${project.title} | DanskApplication`;
+          document
+            .querySelector('meta[name="description"]')
+            .setAttribute("content", `${project.title} - DanskApplication`);
+
+          // Breadcrumb
+          document.querySelector("nav span").textContent = project.title;
+
+          // Title, category, description
+          document.querySelector(".product-title").textContent = project.title;
+          document.querySelector(".product-category").textContent =
+            project.category.join(", ");
+          document.querySelector(
+            ".product-description"
+          ).innerHTML = `<p>${project.description}</p>`;
+
+          // Tech stack
+          const techContainer = document.querySelector(".product-tech");
+          techContainer.innerHTML = project.tech
+            .map((tech) => `<span class="product-tech-item">${tech}</span>`)
+            .join("");
+
+          // Features ✅ (this was missing in context!)
+          const featureList = document.querySelector(".feature-list");
+          if (project.features && project.features.length > 0) {
+            featureList.innerHTML = project.features
+              .map(
+                (f) => `
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+              ${f}
+            </li>
+          `
+              )
+              .join("");
+          }
+
+          // Form hidden input
+          document.querySelector('input[name="product"]').value = project.title;
+
+          // Images
+          const mainImage = document.getElementById("main-product-image");
+          const thumbnailContainer = document.querySelector(
+            ".product-thumbnails"
+          );
+
+          if (project.images.length) {
+            mainImage.src = project.images[0];
+            thumbnailContainer.innerHTML = project.images
+              .map(
+                (img, i) => `
+          <div class="product-thumbnail ${
+            i === 0 ? "active" : ""
+          }" data-img="${img}">
+            <img src="${img}" alt="${project.title} - Görsel ${i + 1}" />
+          </div>
+        `
+              )
+              .join("");
+          }
+
+          // Thumbnail interactivity
+          const thumbnails = document.querySelectorAll(".product-thumbnail");
+          thumbnails.forEach((thumbnail) => {
+            thumbnail.addEventListener("click", () => {
+              thumbnails.forEach((t) => t.classList.remove("active"));
+              thumbnail.classList.add("active");
+              mainImage.src = thumbnail.getAttribute("data-img");
+            });
+          });
+        })
+        .catch((err) => console.error("Proje verisi yüklenemedi:", err));
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch("../projects.json")
+          .then((res) => res.json())
+          .then((projects) => {
+            const current = projects.find(
+              (p) => p.title === "FutureVerde Kurumsal Web Sitesi"
+            );
+            if (!current) return;
+
+            const related = projects
+              .filter((p) => p.title !== current.title)
+              .map((p) => {
+                const sharedTech = p.tech.filter((t) =>
+                  current.tech.includes(t)
+                );
+                return { ...p, relevance: sharedTech.length };
+              })
+              .filter((p) => p.relevance > 0)
+              .sort((a, b) => b.relevance - a.relevance)
+              .slice(0, 3);
+
+            const container = document.getElementById("related-projects");
+
+            function generateSlug(title) {
+              return title
+                .toLowerCase()
+                .trim()
+                .replace(
+                  /[çÇğĞıİöÖşŞüÜ]/g,
+                  (c) =>
+                    ({
+                      ç: "c",
+                      Ç: "c",
+                      ğ: "g",
+                      Ğ: "g",
+                      ı: "i",
+                      İ: "i",
+                      ö: "o",
+                      Ö: "o",
+                      ş: "s",
+                      Ş: "s",
+                      ü: "u",
+                      Ü: "u",
+                    }[c])
+                )
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-+|-+$/g, "");
+            }
+
+            container.innerHTML = related
+              .map(
+                (p) => `
+    <div class="portfolio-item visible"  style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: 0.3s;">
+        <div class="portfolio-img">
+          <img src="${p.images[0]}" alt="${
+                  p.title
+                }" style="width: 100%; height: 180px; object-fit: cover;">
+        </div>
+        <div class="portfolio-content" style="padding: 16px;">
+          <h4 class="portfolio-title" style="margin-bottom: 8px;">${
+            p.title
+          }</h4>
+          <p class="portfolio-category" style="font-size: 0.85rem; color: #777;">${p.category.join(
+            ", "
+          )}</p>
+          <p class="portfolio-description" style="margin: 12px 0; font-size: 0.95rem;">${p.description.slice(
+            0,
+            100
+          )}...</p>
+   <a href="${generateSlug(p.title)}.html" class="btn btn-primary">İncele</a>
+
+        </div>
+      </div>
+    `
+              )
+              .join("");
+          })
+          .catch((err) => console.error("Benzer ürünler yüklenemedi:", err));
+      });
+    </script>
+    <script>
+      // Set the hidden input based on the title or URL
+      document.getElementById("productInput").value = document.title;
+    </script>
+    <script>
+      document
+        .getElementById("priceForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const form = e.target;
+          const formData = new FormData(form);
+          const snackbar = document.getElementById("snackbar");
+
+          try {
+            const response = await fetch(
+              "https://formsubmit.co/ajax/danskapplication@gmail.com",
+              {
+                method: "POST",
+                body: formData,
+              }
+            );
+
+            const result = await response.json();
+
+            if (response.ok) {
+              form.reset();
+              showSnackbar(
+                "Form başarıyla gönderildi. En kısa sürede size ulaşacağız."
+              );
+            } else {
+              throw new Error(
+                result.message || "Gönderim sırasında bir hata oluştu."
+              );
+            }
+          } catch (err) {
+            showSnackbar(err.message, true);
+          }
+        });
+
+      function showSnackbar(message, isError = false) {
+        const snackbar = document.getElementById("snackbar");
+        snackbar.textContent = message;
+        snackbar.className = `show${isError ? " error" : ""}`;
+
+        setTimeout(() => {
+          snackbar.className = snackbar.className.replace("show", "").trim();
+        }, 5000);
+      }
+    </script>
+    <script>
+      const form = document.getElementById("priceForm");
+
+      form
+        .querySelectorAll("input[required], textarea[required]")
+        .forEach((field) => {
+          field.addEventListener("input", () => {
+            field.setCustomValidity(""); // Clear on user input
+          });
+
+          field.addEventListener("invalid", () => {
+            if (field.validity.valueMissing) {
+              field.setCustomValidity("Bu alan zorunludur.");
+            } else if (field.type === "email" && field.validity.typeMismatch) {
+              field.setCustomValidity(
+                "Lütfen geçerli bir e-posta adresi giriniz."
+              );
+            } else {
+              field.setCustomValidity("");
+            }
+          });
+        });
+    </script>
+    <script>
+      fetch("/whatsapp-button.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("whatsapp-button-placeholder").innerHTML =
+            html;
+        });
+    </script>
+  </body>
+</html>

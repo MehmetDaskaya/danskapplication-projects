@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DanskApplication - Profesyonel yazılım geliştirme ve mobil uygulama hizmetleri sunan bir şirket"
+    />
+    <title>DanskApplication | Yazılım Geliştirme Uzmanları</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+   .hp-field {
+        display: none;
+      }
+
+      #snackbar {
+  visibility: hidden;
+  min-width: 280px;
+  max-width: 90%;
+  background-color: #43a047;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  padding: 14px 20px;
+  position: fixed;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  z-index: 9999;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: visibility 0s, opacity 0.3s ease;
+  opacity: 0;
+}
+
+#snackbar.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+#snackbar.error {
+  background-color: #e53935;
+}
+
+    </style>
+  </head>
+  <div id="snackbar"></div>
+  <div id="whatsapp-button-placeholder"></div>
+
+  <body>
+    <header class="header" id="header">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="#home">Dansk<span>Application</span></a>
+        </div>
+        <button class="menu-btn" id="menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="active">Ana Sayfa</a></li>
+          <li><a href="#portfolio">Projelerimiz</a></li>
+          <li><a href="#about">Hakkımızda</a></li>
+
+          <li><a href="#contact">İletişim</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container hero-wrapper">
+        <div class="hero-text">
+          <h1 class="hero-title">Dansk<span>Application</span></h1>
+          <p class="hero-subtitle">Kurumunuza Tam Uyumlu Yazılımlar</p>
+          <p class="hero-description">
+            Sizler için yaptığımız web siteleri ve mobil uygulamalarda tam bir
+            terzi dikkati ve özeniyle, bütçenize ve kurumunuzun kimliğine uygun
+            tasarımlar yapıyoruz.
+          </p>
+          <p class="hero-description">
+            Tasarımımız kurumunuzun kimliğine tam oturacak 🧵 🪡 ✂️
+          </p>
+          <a href="#portfolio" class="btn btn-secondary hero-btn"
+            >Bir Web Sitesi İstiyorum</a
+          >
+        </div>
+        <div class="hero-image">
+          <img src="https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/hero.png" alt="Hero Illustration" />
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-down">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio section" id="portfolio">
+      <div class="container">
+        <div class="section-title">
+          <h2>Projelerimiz</h2>
+          <p style="font-size: large;">
+            Aşağıdaki tüm projelerimiz örnektir ve
+            <span style="font-weight: bold"
+              >sizin için baştan sona özelleştirilebilir.</span
+            >
+          </p>
+          <p style="font-size: small;">
+            Tasarımının veya işlevselliğinin sizin kurumunuza uyumlu olduğunu düşündüğünüz bir proje varsa, lütfen ilgili sayfadaki iletişim formundan bize ulaşın.
+        </div>
+
+        <div class="portfolio-filter">
+          <button class="filter-btn active" data-filter="all">Tümü</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="mobil">Mobil</button>
+        </div>
+
+        <div class="portfolio-grid" id="portfolio-grid"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>Biz Kimiz</h2>
+            <p class="about-description">
+              DanskApplication, 2020 yılında kurulmuş, web ve mobil uygulama
+              geliştirme alanında uzman bir yazılım şirketidir. Tutkulu ve
+              yetenekli ekibimizle müşterilerimize yenilikçi, kullanıcı dostu ve
+              güvenilir dijital çözümler sunuyoruz.
+            </p>
+            <p class="about-description">
+              Müşterilerimizin ihtiyaçlarını anlamak ve projelerini başarıyla
+              hayata geçirmek için özel yaklaşımlar geliştiriyoruz. Her projede
+              kaliteyi, kullanıcı deneyimimini ve güvenliği ön planda tutuyoruz.
+            </p>
+            <p class="about-description">
+              Yazılım geliştirme konusunda deneyimli ekibimiz, her projeye
+              yenilikçi çözümler sunmak için en güncel teknolojileri
+              kullanmaktadır.
+            </p>
+
+            <div class="expertise">
+              <div class="expertise-item">
+                <div class="expertise-icon">
+                  <i class="fas fa-laptop-code"></i>
+                </div>
+                <h4 class="expertise-title">Web Geliştirme</h4>
+                <p>
+                  Özel web uygulamaları ve modern web siteleri geliştiriyoruz.
+                </p>
+              </div>
+              <div class="expertise-item">
+                <div class="expertise-icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h4 class="expertise-title">Mobil Uygulama</h4>
+                <p>
+                  Android ve iOS platformları için özel uygulamalar
+                  geliştiriyoruz.
+                </p>
+              </div>
+              <div class="expertise-item">
+                <div class="expertise-icon">
+                  <i class="fas fa-server"></i>
+                </div>
+                <h4 class="expertise-title">Backend Sistemler</h4>
+                <p>
+                  Güçlü ve ölçeklenebilir backend sistemleri kuruyor ve
+                  yönetiyoruz.
+                </p>
+              </div>
+              <div class="expertise-item">
+                <div class="expertise-icon">
+                  <i class="fas fa-paint-brush"></i>
+                </div>
+                <h4 class="expertise-title">UI/UX Tasarım</h4>
+                <p>
+                  Kullanıcı odaklı, modern ve çekici arayüzler tasarlıyoruz.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>İletişim</h2>
+          <p>Projeleriniz için bizimle iletişime geçin</p>
+        </div>
+
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Bize Ulaşın</h3>
+            <p>
+              Dijital çözümleriniz için hazırız. Projelerinizi dinlemek ve size
+              nasıl yardımcı olabileceğimizi keşfetmek için bizimle iletişime
+              geçin.
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Telefon</h4>
+                  <p>+90 (542) 812 30 81</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>E-posta</h4>
+                  <p>danskapplication@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Çalışma Saatleri</h4>
+                  <p>Haftanın her günü 09:00 - 18:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+             <div class="product-cta">
+            
+
+              <form id="contactForm" class="contact-request-form">
+                <!-- Formsubmit ayarları -->
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="Yeni Ürün Fiyat Talebi"
+                />
+                <input type="hidden" name="_template" value="box" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://yourdomain.com/tesekkurler.html"
+                />
+                <input type="hidden" name="product" id="productInput" />
+
+                <!-- Ürün adı -->
+                <input
+                  type="hidden"
+                  name="product"
+                  value="Anasayfa"
+                />
+
+                <!-- Form alanları -->
+                <div class="form-group">
+                  <label for="name" class="form-label">Adınız *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label"
+                    >E-posta Adresiniz *</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" class="form-label"
+                    >Telefon Numaranız</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="form-control"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="company" class="form-label">Şirket Adı</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    class="form-control"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="message" class="form-label">Mesajınız</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="form-control"
+                    rows="4"
+                  ></textarea>
+                </div>
+
+                <!-- Honeypot - botlar için tuzak -->
+                <div class="form-group hp-field">
+                  <label for="website" class="form-label">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    class="form-control"
+                  />
+                </div>
+
+                <button type="submit" class="btn btn-primary form-submit">
+                  Fiyat Bilgisi İste
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <a href="#home" class="footer-logo"
+              >Dansk<span>Application</span></a
+            >
+            <p class="footer-description">
+              DanskApplication olarak web ve mobil uygulama geliştirme konusunda
+              uzman ekibimizle işinizi dijital dünyada bir adım öne taşıyoruz.
+            </p>
+         
+          </div>
+
+          <div class="footer-links">
+            <h4 class="footer-title">Hızlı Bağlantılar</h4>
+            <ul>
+              <li><a href="#home">Ana Sayfa</a></li>
+              <li><a href="#about">Hakkımızda</a></li>
+              <li><a href="#portfolio">Projelerimiz</a></li>
+              <li><a href="#contact">İletişim</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h4 class="footer-title">İletişim Bilgileri</h4>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <p>Beşiktaş/Kağıthane İstanbul</p>
+            </div>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <p>+90 (542) 812 30 81</p>
+              </p>
+            </div>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <p>danskapplication@gmail.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <p>&copy; 2025 DanskApplication | Bucak Yazılım Tüm hakları saklıdır.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FontAwesome Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+      // Header scroll effect
+      window.addEventListener("scroll", () => {
+        const header = document.getElementById("header");
+        if (window.scrollY > 100) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const navMenu = document.getElementById("nav-menu");
+
+      menuBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+        menuBtn.innerHTML = navMenu.classList.contains("active")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+      });
+
+      // Close menu when clicking on a nav link (mobile)
+      const navLinks = document.querySelectorAll(".nav-menu a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          menuBtn.classList.remove("active");
+          menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+      });
+
+      // Active Link on Scroll
+      window.addEventListener("scroll", () => {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-menu a");
+
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (window.scrollY >= sectionTop - 100) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+  
+      // Portfolio Animation on Scroll
+      const observePortfolio = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              setTimeout(() => {
+                observePortfolio.unobserve(entry.target);
+              }, 500);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      portfolioItems.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.1}s`;
+        observePortfolio.observe(item);
+      });
+
+    
+
+      // Smooth scroll for Safari and older browsers
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+
+    <script>
+      fetch("projects.json")
+        .then((res) => res.json())
+        .then((projects) => {
+          const container = document.getElementById("portfolio-grid");
+
+          const html = projects
+            .map((project) => {
+              const categories = project.category.join(",");
+              const firstImage =
+                project.images[0] || "https://via.placeholder.com/600x400";
+              const techList = project.tech
+                .map((t) => `<span class="portfolio-tech-item">${t}</span>`)
+                .join("");
+              const projectSlug = generateSlug(project.title);
+
+             return `
+<div class="portfolio-item visible" data-category="${categories}">
+  <div class="portfolio-img">
+    <img src="${firstImage}" alt="${project.title}" />
+  </div>
+  <div class="portfolio-content">
+    <h4 class="portfolio-title">${project.title}</h4>
+    <p class="portfolio-description">${project.description.slice(0, 140)}...</p>
+    <div class="portfolio-tech">${techList}</div>
+    <div style="margin-top: auto; display: flex; justify-content: flex-end;">
+      <a href="urunler/${projectSlug}.html" class="btn btn-outline">Projeyi Gör</a>
+    </div>
+  </div>
+</div>
+`;
+            })
+            .join("");
+
+          container.innerHTML = html;
+
+          // 🔥 NOW that portfolio items exist in the DOM:
+          const filterBtns = document.querySelectorAll(".filter-btn");
+          const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+          filterBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              // Set active button
+              filterBtns.forEach((b) => b.classList.remove("active"));
+              btn.classList.add("active");
+
+              const filter = btn.getAttribute("data-filter");
+
+              portfolioItems.forEach((item) => {
+                const itemCategories = item
+                  .getAttribute("data-category")
+                  .split(",")
+                  .map((cat) => cat.trim());
+
+                if (filter === "all" || itemCategories.includes(filter)) {
+              item.style.display = "flex";
+
+                } else {
+                  item.style.display = "none";
+                }
+              });
+            });
+          });
+        })
+        .catch((error) => console.error("Proje verileri yüklenemedi:", error));
+    </script>
+
+    <script>
+      function generateSlug(text) {
+        const turkishMap = {
+          ç: "c",
+          Ç: "c",
+          ğ: "g",
+          Ğ: "g",
+          ı: "i",
+          İ: "i",
+          ö: "o",
+          Ö: "o",
+          ş: "s",
+          Ş: "s",
+          ü: "u",
+          Ü: "u",
+        };
+
+        return text
+          .replace(/[çÇğĞıİöÖşŞüÜ]/g, (char) => turkishMap[char])
+          .toLowerCase()
+          .replace(/\s+/g, "-") // Replace spaces with dashes
+          .replace(/[^\w-]/g, "") // Remove non-word characters
+          .replace(/--+/g, "-") // Replace multiple dashes with one
+          .replace(/^-+|-+$/g, ""); // Trim dashes from start and end
+      }
+    </script>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        if (window.location.hash) {
+          const target = document.querySelector(window.location.hash);
+          if (target) {
+            setTimeout(() => {
+              target.scrollIntoView({ behavior: "smooth" });
+            }, 100); // Delay ensures content is ready
+          }
+        }
+      });
+    </script>
+    
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const form = e.target;
+          const formData = new FormData(form);
+          const snackbar = document.getElementById("snackbar");
+
+          try {
+            const response = await fetch(
+              "https://formsubmit.co/ajax/danskapplication@gmail.com",
+              {
+                method: "POST",
+                body: formData,
+              }
+            );
+
+            const result = await response.json();
+
+            if (response.ok) {
+              form.reset();
+              showSnackbar(
+                "Form başarıyla gönderildi. En kısa sürede size ulaşacağız."
+              );
+            } else {
+              throw new Error(
+                result.message || "Gönderim sırasında bir hata oluştu."
+              );
+            }
+          } catch (err) {
+            showSnackbar(err.message, true);
+          }
+        });
+
+      function showSnackbar(message, isError = false) {
+        const snackbar = document.getElementById("snackbar");
+        snackbar.textContent = message;
+        snackbar.className = `show${isError ? " error" : ""}`;
+
+        setTimeout(() => {
+          snackbar.className = snackbar.className.replace("show", "").trim();
+        }, 5000);
+      }
+    </script>
+    <script>
+      const form = document.getElementById("contactForm");
+
+      form
+        .querySelectorAll("input[required], textarea[required]")
+        .forEach((field) => {
+          field.addEventListener("input", () => {
+            field.setCustomValidity(""); // Clear on user input
+          });
+
+          field.addEventListener("invalid", () => {
+            if (field.validity.valueMissing) {
+              field.setCustomValidity("Bu alan zorunludur.");
+            } else if (field.type === "email" && field.validity.typeMismatch) {
+              field.setCustomValidity(
+                "Lütfen geçerli bir e-posta adresi giriniz."
+              );
+            } else {
+              field.setCustomValidity("");
+            }
+          });
+        });
+    </script>
+<script>
+  fetch("/whatsapp-button.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("whatsapp-button-placeholder").innerHTML = html;
+    });
+</script>
+
+  </body>
+</html>

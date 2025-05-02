@@ -1,0 +1,161 @@
+[
+  {
+    "title": "Üskümenzade E-Ticaret Sitesi",
+    "category": ["web"],
+    "images": [
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/uskumenzade-1.jpg",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/uskumenzade-2.jpg",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/uskumenzade-3.jpg",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/uskumenzade-4.jpg",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/uskumenzade-5.jpg",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/uskumenzade-6.jpg"
+    ],
+    "description": "Ürün satışına yönelik, kullanıcıların sipariş verebildiği, ürünleri görüntüleyebildiği ve blog içeriklerine ulaşabildiği mobil görünüme uygun modern bir e-ticaret sitesi geliştirildi. Yönetim paneli üzerinden içerik ve ürün kontrolü sağlanabilmektedir.",
+    "tech": ["TypeScript", "React"],
+    "features": [
+      "🛒 Sepet ve Sipariş Yönetimi Sistemi",
+      "📱 Mobil Uyumlu (Responsive) Tasarım",
+      "🔒 SSL ve Güvenli Ödeme Entegrasyonu",
+      "🛍️ Kategori ve Ürün Filtreleme Özelliği",
+      "📝 Blog ve İçerik Yönetimi",
+      "⚙️ Yönetici Paneli ile Tam Kontrol",
+      "📦 Stok Takibi ve Otomatik Bildirimler",
+      "🌐 Çoklu Dil ve Para Birimi Desteği",
+      "📊 Google Analytics ve SEO Desteği",
+      "📧 İletişim ve Bülten Kayıt Formları"
+    ]
+  },
+  {
+    "title": "Vestegnens Pizzeria Web Sitesi ve Mobil Uygulaması",
+    "category": ["web", "mobil"],
+    "images": [
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/vestegnens-1.jpg",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/vestegnens-2.jpg",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/vestegnens-3.jpg"
+    ],
+    "description": "Danimarka'daki Vestegnens Pizzeria için kullanıcıların kolayca sipariş verebildiği modern ve mobil görünüme uygun bir web sitesi ile Android ve iOS mobil uygulamaları geliştirdik. Restoran sahipleri gelen siparişleri mobil uygulama üzerinden görüntüleyip kabul veya reddedebiliyor.",
+    "tech": ["WordPress", "React Native", "Android", "iOS"],
+    "features": [
+      "🍕 Menü Görüntüleme ve Sipariş Sistemi",
+      "📱 Mobil Uyumlu Web ve Uygulama Tasarımı",
+      "📦 Sipariş Takibi ve Yönetim Paneli",
+      "🔔 Gerçek Zamanlı Sipariş Bildirimleri",
+      "🗺️ Lokasyon Bazlı Teslimat Ayarları",
+      "💳 Online ve Kapıda Ödeme Seçenekleri",
+      "📊 Satış Raporları ve İstatistik Görünümü",
+      "🌐 Çoklu Dil Desteği",
+      "📧 İletişim ve Geri Bildirim Formları"
+    ]
+  },
+  {
+    "title": "FutureVerde Kurumsal Web Sitesi",
+    "category": ["web"],
+    "images": [
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/futureverde-1.jpg",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/futureverde-2.jpg",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/futureverde-3.jpg"
+    ],
+    "description": "FutureVerde için geliştirilen mobil uyumlu kurumsal site, şirketin yeşil enerji alanındaki hizmetlerini tanıtmakta ve kurumsal kimliğini dijital ortamda en iyi şekilde yansıtmaktadır. Modern tasarım anlayışıyla geliştirilen sitede iletişim kolaylığı ön plandadır.",
+    "tech": ["HTML", "CSS", "JavaScript"],
+    "features": [
+      "🌿 Yeşil Enerji Odaklı Kurumsal Tasarım",
+      "📱 Mobil Uyumlu (Responsive) Arayüz",
+      "📞 Hızlı ve Kolay İletişim Formu",
+      "📄 Hizmet Tanıtım Sayfaları",
+      "🖼️ Proje Galerisi ve Medya Sunumu",
+      "🔒 SSL Sertifikası ile Güvenli Erişim",
+      "🌐 SEO Uyumlu Yapı ve Hızlı Yükleme",
+      "📊 Google Analytics Entegrasyonu"
+    ]
+  },
+  {
+    "title": "Cafeteria il Lago Web Sitesi",
+    "category": ["web"],
+    "images": [
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/illago-1.png",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/illago-2.png",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/illago-3.png",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/illago-4.png",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/illago-5.png"
+    ],
+    "description": "Danimarka merkezli Cafeteria il Lago için şık, kullanıcı dostu ve mobil görünüme uygun bir web sitesi geliştirdik. Müşterilerin menüleri inceleyebildiği, rezervasyon yapabildiği ve hızlı iletişim kurabildiği bir yapı sunuldu.",
+    "tech": ["WordPress", "React", "TypeScript"],
+    "features": [
+      "📋 Güncellenebilir Menü Sayfası",
+      "📱 Mobil Uyumlu (Responsive) Tasarım",
+      "📅 Online Rezervasyon Sistemi",
+      "📸 Görsel Ağırlıklı Şık Sunum",
+      "📍 Google Maps ile Konum Gösterimi",
+      "📞 Hızlı İletişim Butonları",
+      "💬 Çoklu Dil Desteği",
+      "🔒 Güvenli Form Gönderimi (SSL)"
+    ]
+  },
+  {
+    "title": "Cafe QR Menü Sistemi",
+    "category": ["web", "mobil"],
+    "images": [
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/cafeqr-1.jpg",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/cafeqr-2.jpg",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/cafeqr-3.jpg"
+    ],
+    "description": "Kafeler için geliştirilmiş mobil uyumlu bir QR menü sistemidir. Müşteriler masalardaki QR kodları tarayarak temassız şekilde menüyü inceleyebilir. Yönetici paneli sayesinde işletmeler menüleri dilediği gibi güncelleyebilir.",
+    "tech": ["React", "Firebase", "PWA"],
+    "features": [
+      "📱 QR Kod ile Temassız Menü Erişimi",
+      "🖼️ Görselli Ürün Tanıtımı",
+      "🧑‍💼 Yönetici Paneli ile Menü Kontrolü",
+      "🌐 Mobil Uyumlu ve PWA Desteği",
+      "🔄 Gerçek Zamanlı Menü Güncelleme",
+      "🧾 Fiyat ve İçerik Bilgisi Gösterimi",
+      "🔒 SSL ile Güvenli Bağlantı",
+      "💡 Kullanıcı Dostu Arayüz"
+    ]
+  },
+
+  {
+    "title": "TTGARAJ Kurumsal Web Sitesi",
+    "category": ["web"],
+    "images": [
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/ttgaraj-1.jpg",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/ttgaraj-2.jpg",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/ttgaraj-3.jpg"
+    ],
+    "description": "TTGARAJ için geliştirilen bu kurumsal web sitesi, şirketin hizmetlerini detaylı bir şekilde tanıtmak ve potansiyel müşterilere ulaşmak amacıyla hazırlanmıştır. Mobil cihazlara tamamen uyumlu olup, hizmet detayları ve iletişim bilgileri kullanıcıya sade bir yapıyla sunulmaktadır.",
+    "tech": ["HTML", "CSS", "JavaScript"],
+    "features": [
+      "📱 Mobil Uyumlu (Responsive) Tasarım",
+      "🏢 Hizmet Tanıtımı için Kurumsal Sayfalar",
+      "📞 Hızlı Erişimli İletişim Formu",
+      "🗺️ Google Maps ile Konum Entegrasyonu",
+      "📷 Galeri ve Referans Bölümü",
+      "🖥️ Modern ve Temiz Arayüz",
+      "🔒 SSL ile Güvenli Bağlantı",
+      "⚙️ Kolay Yönetim için İçerik Düzenleme Desteği"
+    ]
+  },
+
+  {
+    "title": "BuyShop E-Ticaret Web Sitesi ve Mobil Uygulaması",
+    "category": ["mobil"],
+    "images": [
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/buyshop-1.jpg",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/buyshop-2.jpg",
+      "https://raw.githubusercontent.com/MehmetDaskaya/danskapplication-portfolio/refs/heads/main/images/buyshop-3.jpg"
+    ],
+    "description": "BuyShop için geliştirilen bu mobil e-ticaret uygulaması, kullanıcıların ürünleri kolayca inceleyip sipariş verebildiği, blog içeriklerini okuyabildiği ve kampanyalardan haberdar olabildiği bir altyapı sunar. Yönetici paneli ile tam kontrol sağlanmaktadır.",
+    "tech": ["React Native", "TypeScript", "Android", "iOS"],
+    "features": [
+      "🛍️ Hızlı ve Kolay Ürün Siparişi",
+      "📱 Android & iOS Uyumlu Mobil Uygulama",
+      "🔔 Anlık Bildirim Sistemi (Push Notifications)",
+      "🧾 Sipariş ve Teslimat Takibi",
+      "💬 Kullanıcı Yorumları ve Değerlendirmeler",
+      "🎯 Kampanya ve Kupon Yönetimi",
+      "📈 Satış Raporları ve İstatistikler",
+      "⚙️ Yönetici Paneli ile Ürün ve Sipariş Kontrolü",
+      "🖼️ Ürün Galerisi ve Detaylı Açıklamalar",
+      "📧 Bülten ve E-posta Pazarlama Entegrasyonu"
+    ]
+  }
+]

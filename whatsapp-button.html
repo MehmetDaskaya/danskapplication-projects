@@ -1,0 +1,46 @@
+<!-- whatsapp-button.html -->
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp Button</title>
+  </head>
+
+  <a
+    href="https://wa.me/905428123081"
+    target="_blank"
+    id="whatsapp-button"
+    aria-label="WhatsApp ile iletişime geç"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <style>
+    #whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      font-size: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 56px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    #whatsapp-button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+
+  <!-- Font Awesome for WhatsApp icon -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"
+    defer
+  ></script>
+</html>
